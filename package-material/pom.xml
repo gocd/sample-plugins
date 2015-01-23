@@ -13,7 +13,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.thoughtworks.go</groupId>
+            <groupId>cd.go.plugin</groupId>
             <artifactId>go-plugin-api</artifactId>
             <version>14.4.0</version>
             <scope>provided</scope>
