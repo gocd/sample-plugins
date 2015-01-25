@@ -24,4 +24,5 @@ $ mvn install:install-file -Dfile=<folder containing go plugin api jar>/go-plugi
 5. You could open the project using the pom.xml in any IDE of your choice and play around with the code.
    Note: Once Go plugin API is installed to maven repo, there should be no errors related to plugin API.
 
-For more information on building Go plugins, visit: http://www.go.cd/documentation/developer/current/writing_go_plugins/go_plugins_basics.html
+For more information on building Go plugins, visit: http://www.go.cd/documentation/developer/writing_go_plugins/overview.html
+
