@@ -12,8 +12,7 @@ Following are steps to be followed to get started with the samples
 
 All Go plugins needed to depend on Go plugin API jar. To get started, get a copy of API jar and place it inside some folder.
 
-1. Sample plugins use maven for dependency resolution and as such Go plugin API needs to be installed to maven local repository using the following command:
-$ mvn install:install-file -Dfile=<folder containing go plugin api jar>/go-plugin-api-<version>.jar
+1. Sample plugins use maven for dependency resolution. The Go plugin API jar is now available through Maven central.
 
 2. Run mvn clean install - this would build the plugins. Jars would be available in the 'target' folder of individual modules.
 
