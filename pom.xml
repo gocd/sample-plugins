@@ -17,16 +17,19 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.thoughtworks.go</groupId>
-    <artifactId>curl-plugin-old-api-based</artifactId>
-    <version>1.0</version>
+    <artifactId>go-sample-plugins</artifactId>
+    <version>15.3.0</version>
+    <name>Sample plugins for ThoughtWorks Go</name>
+    <packaging>pom</packaging>
 
     <properties>
+        <go.version>${project.version}</go.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <go.version>14.4.0</go.version>
     </properties>
 
     <dependencies>
@@ -35,45 +38,26 @@
             <artifactId>go-plugin-api</artifactId>
             <version>${go.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.4</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.thoughtworks.go</groupId>
+                    <artifactId>go-plugin-api-internal</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
-    <build>
-        <sourceDirectory>src</sourceDirectory>
-        <resources>
-            <resource>
-                <directory>resources</directory>
-            </resource>
-        </resources>
-        <finalName>${project.artifactId}</finalName>
+    <modules>
+        <module>curl-plugin</module>
+        <module>descriptor-hash-plugin</module>
+    </modules>
 
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.4</version>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Go-Version>${go.version}</Go-Version>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5</version>
             </plugin>
 
             <plugin>
@@ -88,8 +72,8 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.outputDirectory}\lib</outputDirectory>
-                            <includeScope>runtime</includeScope>
+                            <outputDirectory>${project.build.directory}\lib</outputDirectory>
+                            <includeScope>provided</includeScope>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>false</overWriteSnapshots>
                             <overWriteIfNewer>true</overWriteIfNewer>

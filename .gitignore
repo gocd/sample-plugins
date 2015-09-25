@@ -1,3 +1,4 @@
-*/target
-*/.idea
-*/curl-plugin.iml
+**/*.iml
+**/*.ipr
+.idea
+target
