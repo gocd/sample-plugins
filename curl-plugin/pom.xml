@@ -22,7 +22,7 @@
 
     <groupId>com.thoughtworks.go</groupId>
     <artifactId>curl-plugin</artifactId>
-    <version>15.3.0</version>
+    <version>17.2.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,7 +33,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.thoughtworks.go</groupId>
+            <groupId>cd.go.plugin</groupId>
             <artifactId>go-plugin-api</artifactId>
             <version>${go.version}</version>
             <scope>provided</scope>
