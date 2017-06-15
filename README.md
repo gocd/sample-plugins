@@ -23,7 +23,7 @@ All Go plugins needed to depend on Go plugin API jar. To get started, get a copy
 5. You could open the project using the pom.xml in any IDE of your choice and play around with the code.
    Note: Once Go plugin API is installed to maven repo, there should be no errors related to plugin API.
 
-For more information on building Go plugins, visit: http://www.go.cd/documentation/developer/writing_go_plugins/overview.html
+For more information on building Go plugins, visit: https://developer.gocd.org/current/writing_go_plugins/overview.html
 
 ## License
 
